@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c3fdadb5-ec7f-4573-9a78-b0fb0adcf697": {
+      "ProjectGuid": "c3fdadb5-ec7f-4573-9a78-b0fb0adcf697",
+      "DisplayName": "HabitLogger",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

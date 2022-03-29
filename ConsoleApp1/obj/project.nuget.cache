@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BzNXkxIpSk5Eh9l/87VzLoWJDcS2/6kiz4E0eRl4+3MCF6Nok7WvkCz/+0KwHYyR9XbXenHd7cMNt8zSBuOXvA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Yeran\\Documents\\GitHub\\C#\\ConsoleApp1\\ConsoleApp1\\HabitLogger.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Yeran\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Yeran\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.115.5\\stub.system.data.sqlite.core.netstandard.1.0.115.5.nupkg.sha512",
+    "C:\\Users\\Yeran\\.nuget\\packages\\system.data.sqlite.core\\1.0.115.5\\system.data.sqlite.core.1.0.115.5.nupkg.sha512"
+  ],
+  "logs": []
+}
