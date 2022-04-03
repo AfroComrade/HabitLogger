@@ -7,40 +7,53 @@ namespace HabitLogger
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine("Hello, World!");
-            SQLInitializer();
-        }
+            SQLHandler sqlHandler = new SQLHandler();
 
-        public static void SQLInitializer()
-        {
-            SQLiteConnection conn = new SQLiteConnection("Data Source=hello.db");
-            conn.Open();
-            Console.WriteLine("Conn opened");
+            Console.WriteLine("Hello, and Welcome to the Habit Logger!");
+            Console.WriteLine("How many Activities did you engage in today?");
 
+            sqlHandler.printAll();
 
-            var command = conn.CreateCommand();
-            command.CommandText = "CREATE TABLE IF NOT EXISTS Users([Id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, [Username] NVARCHAR(64) NOT NULL, [Email] NVARCHAR(128) NOT NULL, [Password] NVARCHAR(128) NOT NULL  )";
-            command.ExecuteNonQuery();
-            Console.WriteLine("Table created");
+            int activities = intInput();
 
-            /*
-            command.CommandText = "INSERT INTO Users(Username, Email, Password) VALUES('admin', 'testing@gmail.com', 'test') ";
-            command.ExecuteNonQuery();
-            Console.WriteLine("Inserted?");
-            */
-
-            command.CommandText = "SELECT Username, Email, Password FROM users";
-
-            using (var reader = command.ExecuteReader())
+            for (int i = 0; i < activities; i++)
             {
-                while (reader.Read())
-                {
-                    var name = reader.GetString(0);
-                    var name2 = reader.GetString(1);
-                    Console.WriteLine($"Hello, {name}, {name2}!");
-                }
+                String activity = "";
+                int numHours = 0;
+
+                Console.WriteLine("Activity " + i + ":");
+                activity = Console.ReadLine();
+                Console.WriteLine("Number of Hours Performed:");
+                numHours = intInput();
+
+                sqlHandler.insert(activity, numHours);
             }
         }
+
+
+        public static int intInput()
+        {
+            String input = "";
+            int number = 0;
+
+            while (input.Equals(""))
+            {
+                input = Console.ReadLine();
+                try
+                {
+                    int.TryParse(input, out number);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Need an integer!");
+                    input = "";
+                }
+            }
+            return number;
+
+        }
+
+        
     }
 }
 
