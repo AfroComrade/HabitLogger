@@ -16,7 +16,3 @@ Design:
  - Track IF healthy eating has engaged this day
  - Can get dates for upto 5 days before today. Any older than that you've missed out.
  - Cannot enter tracker for exercise or healthy eating if already
-
-Two tables I guess, one for exercise and one for healthy eating
- - Record date, string for the exercise, string for the healthy eating, boolean flags for each if engaged
- - Joining table
